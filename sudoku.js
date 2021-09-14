@@ -1,9 +1,4 @@
-/*
-TO DO:
-checkcells()
-sudoku class functions()
-OBSCURE TEXT
-*/
+
 
 function min(array){return Math.min.apply(Math,array)}
 function max(array){return Math.max.apply(Math,array)}
@@ -121,7 +116,7 @@ class cell{
                 }
             }
         }
-        //console.log(this.index, vals_in_group);
+        
         for (let i=0; i<vals_in_group.length;i++){
             if (this.possibleVals.includes(vals_in_group[i])){
                 this.possibleVals = remove_val(this.possibleVals,vals_in_group[i]);            
@@ -290,15 +285,13 @@ class sudoku_board{
             this.computedSolutions.push(current_solution);
         
         }
-//         console.log(this.computedSolutions);
+//       
     }
     
     hasUniqueSolution(){
         this.computedSolutions = [];
         
         this.solve();
-        //console.log(this.computedSolutions);
-        //this.print_to_console();
         if (this.computedSolutions.length > 1 || this.computedSolutions.length ==0){
             return false;
         }
@@ -317,28 +310,16 @@ class sudoku_board{
             let current_pair_ind = getRandomInt(0,pairs.length);
             
             let current_pair = pairs[current_pair_ind];
-            console.log(current_pair);
-//             let pair_as_zero = new sudoku_board();
-           
             for (let i=0; i<current_pair.length;i++){
                 this.cells[current_pair[i]].assign_value(0);
             }
-            
-//             this.print_to_console();
             if (!this.hasUniqueSolution()){
-                console.log('Non-Unique!');
                 for (let i=0;i<current_pair.length;i++){
                     this.cells[current_pair[i]].assign_value(this.solution[current_pair[i]]);
                 }
             }
             pairs = remove_val(pairs, current_pair);
         }
-//         this.reset_board();
-//         for (let i =0;i<this.cellsAsClues.length;i++){
-//             let cell_ind = this.cellsAsClues[i];
-//             this.cells[cell_ind].assign_value(this.solution[cell_ind]);
-//         }
-        
     }
     
     
@@ -372,16 +353,33 @@ class sudoku_board{
     }
     
     
+    noteCompAssigned(){
+        for (let i=0; i<this.cells.length;i++){
+            if (this.cells[i].val !=0){this.cells[i].isComputerAssigned = true}
+        }
+    }
     
-    
+    addFurtherClues(){
+        let clueCount = getRandomInt(1,5);
+        let zeros = [];
+        for (let i=0;i<this.cells.length;i++){
+            if (this.cells[i].val == 0){
+                zeros.push(i);
+            }
+        }
+        for (let i=0;i<clueCount;i++){
+            let ind = getRandomInt(0,zeros.length);
+            this.cells[ind].assign_value(this.solution[ind]);
+            zeros = remove_val(zeros,ind);
+        }
+    }
+
     mainConstruct(){
         this.generateFull();
-        console.log(this.getValsArray());
-        this.print_to_console();
-        console.log(this.isValidLayout());
         this.removeRandPairs();
-        this.print_to_console();
-        console.log(this.computedSolutions.length);
+        this.addFurtherClues();
+        this.noteCompAssigned();
+        
         
 
     }
@@ -394,16 +392,5 @@ class sudoku_board{
 
 sb = new sudoku_board();
 sb.mainConstruct();
-//console.log(sb.getValsArray());
-// sb.setBoardFromArray()
-
-// sb.solve();
-// console.log(sb.computedSolutions);
-// for (let i=0; i<sb.computedSolutions.length;i++){
-//     let x = new sudoku_board();
-//     x.setBoardFromArray(sb.computedSolutions[i]);
-//     console.log(x.isValidLayout());
-// }
-
 
 
