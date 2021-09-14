@@ -1,0 +1,41 @@
+*{
+	background-color: #b3945b;
+}
+/*#sudoku-banner *{
+	background-color: white;
+}
+#sudoku-banner{
+	background-color: white;
+}*/
+.nav-link{
+	background-color:#7a7a7a; /*/#6a9c62;style=" " #42613d;  #6a9c62*/
+	color: white;
+}
+.nav-link a{color: white; text-decoration: none;}
+.nav-link a:hover{color: white;}
+/*.nav-link:hover{background-color: #e3e3e3}*/
+#navbar-app button{background-color: white; border:1px solid #e3e3e3; text-align: left;
+}
+#navbar-app {background-color: white; border:1px solid #e3e3e3; text-align: left;
+}
+/*#navbar-app button:active{background-color: #7a7a7a}*/
+#navbar-app div{background-color: #e3e3e3}
+#navbar-app div:hover{background-color: #7a7a7a}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+#sudoku-banner h1{text-align: center; margin-top: 15px; margin-bottom: 15px;}
+/*style=" background-color: black; margin: none; color: white"*/
+
+#numberpad-component button{background-color: white ;width:100%; font-size: 18pt;border:1px solid #e3e3e3;}
+#numberpad-component button:hover{background-color: #7a7a7a}
+.numberpad-control{background-color: #dbaf67}
+
+
+.sudokuCell:hover{background-color: green}
+
+.numberpad-control:hover{background-color: #000000}
