@@ -1,5 +1,23 @@
+/*
+#753422
+#B05B3B
+#D79771
+#FFEBC9
+*/
+
+
+/*
+402218
+865439
+C68B59
+D7B19D
+
+*/
+
+
 *{
-	background-color: #b3945b;
+	background-color: #D7B19D;
+	color: #402218;
 }
 /*#sudoku-banner *{
 	background-color: white;
@@ -8,25 +26,27 @@
 	background-color: white;
 }*/
 .nav-link{
-	background-color:#7a7a7a; /*/#6a9c62;style=" " #42613d;  #6a9c62*/
+	background-color:#D7B19D; /*/#6a9c62;style=" " #42613d;  #6a9c62*/
 	color: white;
 }
-.nav-link a{color: white; text-decoration: none;}
+.nav-link a{ text-decoration: none;} /*color: white;*/
 .nav-link a:hover{color: white;}
-/*.nav-link:hover{background-color: #e3e3e3}*/
-#navbar-app button{background-color: white; border:1px solid #e3e3e3; text-align: left;
+
+#navbar-app button{background-color: #C68B59; border:1px solid #402218; text-align: left;
 }
-#navbar-app {background-color: white; border:1px solid #e3e3e3; text-align: left;
+#navbar-app {background-color: #402218; border:1px solid #e3e3e3; text-align: left;
 }
 /*#navbar-app button:active{background-color: #7a7a7a}*/
-#navbar-app div{background-color: #e3e3e3}
-#navbar-app div:hover{background-color: #7a7a7a}
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
-}
+#navbar-app div{background-color: #402218}
+.nav-link:hover div{background-color: #C68B59}
+#navbar-app:hover{background-color: #C68B59}
+/*#navbar-app:hover *{background-color: #C68B59}*/
+
+
+
+
+
+
 
 #sudoku-banner h1{text-align: center; margin-top: 15px; margin-bottom: 15px;}
 /*style=" background-color: black; margin: none; color: white"*/
@@ -39,3 +59,20 @@
 .sudokuCell:hover{background-color: green}
 
 .numberpad-control:hover{background-color: #000000}
+
+
+
+
+
+
+
+
+
+/*
+
+@media only screen and (max-width: 768px) {
+   For mobile phones: 
+  [class*="col-"] {
+    width: 100%;
+  }
+}*/
