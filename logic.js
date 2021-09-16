@@ -41,8 +41,8 @@ window.addEventListener("keyup",function(e){
 	}
 	if (e.keyCode ==39){currentCellIndex = currentCellIndex+1; currentCellIndex = currentCellIndex%81}
 	if (e.keyCode ==40){currentCellIndex = currentCellIndex+9; currentCellIndex = currentCellIndex%81}
-	if (e.keyCode ==38){currentCellIndex = currentCellIndex-9; currentCellIndex = currentCellIndex%81}
-	if (e.keyCode ==37){currentCellIndex = currentCellIndex-1; currentCellIndex = currentCellIndex%81}
+	if (e.keyCode ==38){currentCellIndex = currentCellIndex-9+81; currentCellIndex = currentCellIndex%81}
+	if (e.keyCode ==37){currentCellIndex = currentCellIndex-1+81; currentCellIndex = currentCellIndex%81}
 	console.log(e.keyCode);
 })
 
