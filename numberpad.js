@@ -19,7 +19,7 @@ let numberpad = Vue.createApp({
   			<tr>
   				<td><button class = "numberpad-control" onclick="shouldCheckAnswers =!shouldCheckAnswers"> Check</button> </td>
   				<td><button class = "numberpad-control" onclick="insertValFromInput(0)"> Erase</button> </td>
-  				<td><button class = "numberpad-control" onclick="clear_i()">Clear</button> </td>
+  				<td><button class = "numberpad-control" onclick="clear_i()">Reset</button> </td>
   			</tr>
   		</table>`
 });
