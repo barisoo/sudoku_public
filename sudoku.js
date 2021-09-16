@@ -263,14 +263,15 @@ class sudoku_board{
     
     
     solve(){ //solves until the unique solution is found, it is deemed unsolvable, or it is deemed to have more than one solution
-        if (this.computedSolutions.length >2) {
+        if (this.computedSolutions.length >=2) {
             return
         }
         for (let i =0; i<this.cells.length; i++){
             if (this.cells[i].val ==0 ){
                 this.cells[i].reducePossible(this);
-                for (let j=0;j<this.cells[i].possibleVals.length;j++){
-                    this.cells[i].assign_value(this.cells[i].possibleVals[j]);
+                let possibilities2test = this.cells[i].possibleVals;
+                for (let j=0;j<possibilities2test.length;j++){
+                    this.cells[i].assign_value(possibilities2test[j]);
                     if (this.isValidLayout()){
                     this.solve();
                     }
@@ -283,6 +284,7 @@ class sudoku_board{
         let current_solution = this.getValsArray();
         if (!containsArray(this.computedSolutions, current_solution)){
             this.computedSolutions.push(current_solution);
+            
         
         }
 //       
@@ -392,5 +394,8 @@ class sudoku_board{
 
 sb = new sudoku_board();
 sb.mainConstruct();
+// var x=[0,7,0,0,4,8,6,0,0,9,0,0,0,0,5,1,2,8,0,0,3,0,9,6,0,4,7,0,0,0,0,8,4,2,3,1,5,0,1,0,0,0,9,0,4,0,3,8,9,1,0,0,0,0,6,4,0,8,0,0,3,0,0,8,5,2,7,0,0,0,0,9,0,0,7,4,2,0,0,6,0]
 
+// sb.setBoardFromArray(x);
 
+// console.log(sb.hasUniqueSolution());
