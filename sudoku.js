@@ -379,7 +379,7 @@ class sudoku_board{
     mainConstruct(){
         this.generateFull();
         this.removeRandPairs();
-        this.addFurtherClues();
+        //this.addFurtherClues();
         this.noteCompAssigned();
         
         
