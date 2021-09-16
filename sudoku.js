@@ -276,7 +276,7 @@ class sudoku_board{
                     }
                 }
                 this.cells[i].assign_value(0);
-                return
+                
             }
             
         }
